@@ -1,7 +1,3 @@
-
-
-
-
 $AllSubscriptionVMs = New-Object System.Collections.ArrayList
 $Subscriptions=Get-AzContext -ListAvailable
 
@@ -25,11 +21,9 @@ Foreach ($subscription in $Subscriptions) {
                 Write-Host ($UniqueSize +": " + $VMofSize.count)
             }
     }
-
-
-    write-host "all sizes in all subsciptions:"
-    $AllSubscriptionVMs | group | % { $h = @{} } { $h[$_.Name] = $_.Count } { $h }
 }
+write-host "all sizes in all subsciptions:"
+$AllSubscriptionVMs | group | % { $h = @{} } { $h[$_.Name] = $_.Count } { $h }
 
 
 
