@@ -22,17 +22,18 @@ Function Get-AzVMsBySize {
         [parameter()]
         $allSubscriptions
     )   
+    $VMSizes=$null
+    $VMSizes = New-Object System.Collections.ArrayList
     $AllVMs=get-azvm
     foreach ($VM in $AllVMs) {
-        $VMSizes=$null
-        $VMSizes = New-Object System.Collections.ArrayList
+
         $supressdisplay=$VMSizes.Add($vm.HardwareProfile.VmSize)
         If ($allSubscriptions) {
             $supressdisplay=$AllSubscriptionVMs.Add($vm.HardwareProfile.VmSize)
         }
     }
 
-        If ($vm.count -gt 1) {
+        If ($AllVMs.count -ge 1) {
             $UniqueSizes=$VMSizes | sort -Unique
             Foreach ($UniqueSize in $UniqueSizes) {
                 $VMofSize=$AllVMs | where {$_.HardwareProfile.VmSize -eq $UniqueSize}
