@@ -1,6 +1,3 @@
-
-
-
 Function Get-AzVMsBySizeInAllSubscriptions{
     $AllSubscriptionVMs = New-Object System.Collections.ArrayList
     $Subscriptions=Get-AzContext -ListAvailable
