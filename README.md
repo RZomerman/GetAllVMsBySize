@@ -20,7 +20,7 @@ Connect-AzAccount
  ./GetVMSizes.ps1
 ```
 
-# Sample Output
+## Sample Output
 
 ```Powershell
 Subscription: Subscription A (xxxxxx-xxxxxx-xxxxxx-xxxxxx)
