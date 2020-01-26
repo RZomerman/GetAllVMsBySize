@@ -1,6 +1,6 @@
 # Get All VM's By Size
 
-This Repo Contains a PoweeShell script to get the number of VM's by size in an Azure Subscription
+This Repo Contains a PowerShell script to get the number of VM's by size in an Azure Subscription
 
 ## Prerequisites
 
